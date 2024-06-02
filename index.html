@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Software</title>
+  <title>My React Native Web App</title>
 </head>
 <body>
-  <div id="root"></div>
-  <!-- The script tag should point to your index.web.js bundle -->
-  <script src="index.web.js"></script>
+  <div id="app-root"></div>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@react-native-web/1.0.0"></script>
+  <script>
+    const App = ReactNativeWeb.App.default; // Assuming App is exported as a default
+    ReactNativeWeb.AppRegistry.registerComponent('MyApp', () => App);
+    ReactNativeWeb.AppRegistry.runApplication('MyApp', { rootTag: document.getElementById('app-root') });
+  </script>
 </body>
 </html>
