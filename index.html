@@ -5,16 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My React Native Web App</title>
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <div id="app-root"></div>
   <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@react-native-web/1.0.0"></script>
+  <script src="https://unpkg.com/react-native-web@0.14.0/dist/react-native-web.umd.js"></script>
   <script>
-    const App = ReactNativeWeb.App.default; // Assuming App is exported as a default
-    ReactNativeWeb.AppRegistry.registerComponent('MyApp', () => App);
-    ReactNativeWeb.AppRegistry.runApplication('MyApp', { rootTag: document.getElementById('app-root') });
+    const { AppRegistry } = ReactNativeWeb;
+    AppRegistry.registerComponent('MyApp', () => MyApp);
+    AppRegistry.runApplication('MyApp', { initialProps: {}, rootTag: document.getElementById('app-root') });
   </script>
 </body>
 </html>
